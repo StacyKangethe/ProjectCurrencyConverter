@@ -2,7 +2,7 @@ const express = require('express');
 const hbs = require('hbs');
 
 const app = express();
-const port = 3000;
+const port = process.env.PORT || 3000;
 
 
 const exchangeRates = {
@@ -42,6 +42,5 @@ app.post('/', (req, res) => {
 module.exports = { convertCurrency };
 
 
-
 app.listen(port);
-console.log("server listening on port 3000");
+console.log(`server listening on port ${port}`);
